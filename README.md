@@ -9,3 +9,4 @@ This site is a basic website created in the first year of college, taking web an
 Created date : 2018.11.01 ~ 2018.12.01
 
 
+* 용량상의 문제로 baby.mp4, 에너제틱.mp4, 컴백쇼(갖고 싶어).mp4는 올라가지 않습니다. 
