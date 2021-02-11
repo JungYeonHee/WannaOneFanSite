@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body{background-color:black; color:white; 
+	position:realtive; left:50%; top:50%; font-size:3em; text-align:center;}
+</style>    
+<script>
+	
+	var today = new Date();         
+	document.write("Today : " + today.toGMTString() + "<br>"+ "<br>");
+	
+            function checkDate() {
+           <!--var pdate= new Date(2018,01,31,23,59,59);-->
+           <!-- var s = document.getElementById("pdate").value;-->
+            
+           <!-- var s= new Date(2018,01,31,23,59,59);-->
+           <!--var pdate = new Date(s);-->
+            
+            var pdate= new Date(2018,11,31,23,59,59);
+            var today = new Date();
+            var rest =Math.floor( (pdate.getTime()-today.getTime())/1000);
+            <!--var days = Math.floor(diff / (1000 * 60 * 60 * 24));-->
+	
+	var dayD=0; <!--남은 일수 -->
+	var dayH=0; <!--남은 시간수 -->
+	var dayM=0; <!--남은 분수 -->
+	var dayS=0; <!--남은 초수 -->
+	var message="마지막까지 : "
+    
+	
+if(rest>0){
+              dayD= Math.floor(rest/(60*60*24));
+	 if(dayD>0){
+		rest=rest%(60*60*24);
+		message+=dayD+"일";
+	 }
+	 
+	dayH= Math.floor(rest/(60*60));
+	 if(dayH>0){
+		rest=rest%(60*60);
+		message+=dayH+"시간";
+	 }
+	
+	dayM= Math.floor(rest/(60));
+	 if(dayM>0){
+		rest=rest%60;
+		message+=dayM+"분";
+	 }
+	
+	if(rest>0){
+	dayS=rest;
+	message+=dayS+"초";
+	}
+	message+="남았습니다.";
+	
+	
+	alert(message);
+	document.recalc();
+	window.setInterval("getDayD()",1000);
+        }
+else alert("잘못된 날짜를 선택하셨습니다 다시 선택하세요.");
+	
+ }
+	
+</script>
+</head>
+<center>
+<body onload="getDayD();">
+        <!--Selected Date:-->
+        <!--<input type="date" id="realtime">-->
+        <button onclick="checkDate()" id="realtime">♥</button>
+	
+</body>
+</center>
+</html>

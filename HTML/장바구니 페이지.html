@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body{height:100%; background-color: #FAF4C0; font-family:휴먼매직체;}
+	table{width:100%; border-collapse: collapse; text-align:center;}
+	table caption { color: black; text-decoration:overline;}
+	p{ font-size: 1.5em; color: red;}
+	</style>
+	<script>
+		function calc(){
+			var x=document.getElementById("x").value;
+			var y=document.getElementById("y").value;
+			var z=document.getElementById("z").value;
+			var r=document.getElementById("r").value;
+			var s=document.getElementById("s").value;
+			var sum;
+			sum=parseInt(x)+parseInt(y)+parseInt(z)+parseInt(r)+parseInt(s);
+			document.getElementById("sum").value=sum;
+			var price;
+			price=(parseInt(x)*34000)+(parseInt(y)*2000)+(parseInt(z)*20000)+(parseInt(r)*16000)+(parseInt(s)*8000);
+			document.getElementById("price").value=price;
+			
+			if(price>50000)
+			{alert("무료배송입니다!");  var final; final=price; document.getElementById("final").value=price; }
+			else
+			{ alert("택배비가 붙습니다!"); var final; final=price+2500; document.getElementById("final").value=final;}
+	
+	
+		}
+	</script>
+</head>
+<body>
+  
+    <form name="myForm">
+         <table border="1">
+         <caption> Cart </caption>
+			<tr>
+				<th>품목</th>
+				<th>가격</th>
+				<th>수량</th>
+			</tr>
+        <tr><td>공식 응원봉</td><td>34,000원</td><td><input  id="x" type="text" name="a0"><br /></td></tr>
+        <tr><td>AAA건전지</td><td>2,000원</td><td><input  id="y" type="text" name="a1"><br /></td></tr>
+        <tr><td>너블봉 파우치</td><td>20,000원</td><td><input  id="z" type="text" name="a2"><br /></td></tr>
+        <tr><td>너블봉 미니키링</td><td>16,000원</td><td><input  id="r" type="text" name="a3"><br /></td></tr>
+        <tr><td>렌티큘러 L홀더 + 봉투화일</td><td>8,000원</td><td><input  id="s" type="text" name="a4"><br /></td></tr>
+        </table>
+	수량 합계: <input id="sum"/> 가격 합산: <input id="price"/> 총 지불 금액: <input id="final"/>
+        <input type="button" value="초기화" onclick="init();">
+        <input type="button" value="계산" onclick="calc();"/>
+    </form>
+
+<p>*5만원 이상 구매시 무료배송 입니다*</p>
+<br>     
+<a href="GOODS.html"> Back to Shop </a>
+
+    <script>
+        function init() {
+            for (var i = 0; i < 5; i++) {
+                document.myForm["a" + i].value = 0;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

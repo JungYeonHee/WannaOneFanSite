@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>굿즈샵</title>
+	<style>
+		div{ border: 5px double #FFE400 ;
+			//background-color:white;
+			color:gray; 
+			}
+		
+		.t{font-size:3em; color:black; text-align:center;}
+		h2{color:#B79C00; text-align:right;}
+		body{background-color:white; color:#EDD200;  }
+		.cart{text-align:right; font-size:1.5em;}
+	</style>
+	<script>
+    var msg = "";
+    var time = new Date().getHours();
+    if (time < 12) {			// 12시 이전이면
+        msg = "Good Morning Wannable";
+    }
+    else if (time < 18) {			// 오후 6시 이전이면
+        msg = "Good Afternoon Wannable";
+    }
+    else {				// 그렇지 않으면(오후 6시 이후이면) 
+        msg = "Good evening Wannable";
+    }
+    alert(msg);
+
+</script>
+</head>
+<body>
+	<script>
+	var name = prompt("별명을 입력하시오"," 공식 팬카페 별명 ");
+	var age = prompt("나이를 입력하시오", "정수로");
+	var gender = prompt("성별을 입력하시오","여자 혹은 남자");
+
+	
+	alert( "Welcome" + " " + age+"세 "+" " +gender+ " " +name +" " +"워너블! "); 	
+	
+
+	</script>
+	<p class="cart"><a href="장바구니 페이지.html ">장바구니 페이지</a></p>
+	<p class="t"><b>-GOODS-</b></p>
+	<h1>1.공식 응원봉</h1>
+	<div id="p1">
+	
+	<center><img src="너블봉.jpg" width="200"; height="200"></center>
+	<ul>
+		<li>90x90x235MM | PLASTIC</li>
+		<li>건전지 별도판매(AAA*3EA) | BATTERIES NOT INCLUDED</li>
+		<li>LIGHTSSTICK+PACKAGE+STRAP+WARRANTY</li>
+	</ul>
+		<p> <h2>34,000 WON</h2></p>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="alert('장바구니에 담겼습니다!')">cart</button>
+	
+	</div>
+	<h1>2.AAA건전지</h1>
+	<div id="p2">
+	<center><img src="건전지.jpg" width="200"; height="200"></center>
+	<ul>
+		
+		<li>1SET : 3EA</li>
+	</ul>
+		<p><h2>2,000 WON</h2></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="alert('장바구니에 담겼습니다!')">cart</button>
+	
+	</div>
+	<h1>3.너블봉 파우치</h1>
+	<div id="p3">
+	<center><img src="파우치.jpg" width="200"; height="200"></center>
+	<ul>
+		
+		<li>102x102x254MM</li>
+		<li>POUCH+SHORT STRAP+LONG STRAP</li>
+	</ul>
+		<p><h2>20,000 WON</h2></p>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="alert('장바구니에 담겼습니다!')">cart</button>
+		
+	
+	</div>
+	<h1>4.너블봉 미니키링</h1>
+	<div id="p4">
+	<center><img src="키링.jpg" width="200"; height="200"></center>
+	<ul>
+		
+		<li>48x48x105MM | PLASTIC</li>
+	</ul>
+		<p><h2>16,000 WON</h2></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="alert('장바구니에 담겼습니다!')">cart</button>
+	
+	</div>
+	<h1>5.렌티큘러 L홀더 + 봉투화일</h1>
+	<div id="p5">
+	<center><img src="화일.jpg" width="300"; height="200"></center>
+	<ul>
+		
+		<li>220x300MM/225x310MM | PP,PET</li>
+		<li>멤버별 11종</li>
+	</ul>
+		<p><h2>각 8,000 WON</h2></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="alert('장바구니에 담겼습니다!')">cart</button>
+	
+	</div>
+</body>
+</html>

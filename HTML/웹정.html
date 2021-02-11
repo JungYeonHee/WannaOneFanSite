@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>웹페이지</title>
+	<style>
+	a:link { text-decoration: none;  }
+	a:visited {text-decoration:none; color: #73BEE6;}
+	a:hover {text-decoration: hover;}
+	body{ background-color:black; color:white; }
+	 #since{font-family:"Arial Black",serif; color:silver;}       
+	 #audio{position:relative; right:0%;}
+	#f{color:white;}
+	nav{margin:10px;}
+	nav ul.menubar { 	
+		     list-style : none; 
+		     text-align : center; 
+ 	     border-top: 1px solid white; border-bottom:1px solid white; padding:10px 0; 
+	}
+	nav ul li.menubar { 	
+			display:inline;   
+			text-transform:uppercase; 
+            			padding:0 10px; letter-spacing:10px; font-weight:bold;
+	}
+	nav ul li a { text-decoration:none; color:white; }
+	nav ul li a:hover { text-decoration:underline; }
+	
+	.site li {
+            display: inline;
+            margin: 0;
+            padding: .5em;
+        }
+	
+	
+	</style>
+<script>
+	
+	//var today = new Date();         
+	//document.write("Today : " + today.toGMTString() + "<br>"+ "<br>");
+	
+            function checkDate() {
+           <!--var pdate= new Date(2018,01,31,23,59,59);-->
+           <!-- var s = document.getElementById("pdate").value;-->
+            
+           <!-- var s= new Date(2018,01,31,23,59,59);-->
+           <!--var pdate = new Date(s);-->
+           
+            var pdate= new Date(2018,11,31,23,59,59);
+            var today = new Date();
+            var rest =Math.floor( (pdate.getTime()-today.getTime())/1000);
+            <!--var days = Math.floor(diff / (1000 * 60 * 60 * 24));-->
+	
+	var dayD=0; <!--남은 일수 -->
+	var dayH=0; <!--남은 시간수 -->
+	var dayM=0; <!--남은 분수 -->
+	var dayS=0; <!--남은 초수 -->
+	var message="마지막까지 : "
+    
+	
+if(rest>0){
+              dayD= Math.floor(rest/(60*60*24));
+	 if(dayD>0){
+		rest=rest%(60*60*24);
+		message+=dayD+"일";
+	 }
+	 
+	dayH= Math.floor(rest/(60*60));
+	 if(dayH>0){
+		rest=rest%(60*60);
+		message+=dayH+"시간";
+	 }
+	
+	dayM= Math.floor(rest/(60));
+	 if(dayM>0){
+		rest=rest%60;
+		message+=dayM+"분";
+	 }
+	
+	if(rest>0){
+	dayS=rest;
+	message+=dayS+"초";
+	}
+	message+="남았습니다.";
+	
+	
+	alert(message);
+	document.recalc();
+	window.setInterval("getDayD()",1000);
+        }
+else alert("잘못된 날짜를 선택하셨습니다 다시 선택하세요.");
+	
+ }
+	
+</script>
+</head>
+<body>
+
+<!--<img src="공식로고3.jpg" height="400";  width=100%; >-->
+<br><br><br><br><br>
+<center><img src="워너원로고.jpg"></center>
+<p id="since" align="center" ><em>since 2017.08.07~</em></p>
+<center><video src="봄바람.mp4" autoplay controls  height="400" width="400">Your user agent does not support the HTML5 Video element.</video></center>
+
+
+<nav>    
+<ul class="menubar">
+      <li class="menubar" ><a href="프로필.html"  target="_blank">profile</a></li>
+      <li class="menubar" ><a href="video.html"  target="_blank">video</a></li>
+      <li class="menubar"  ><a href="앨범.html"  target="_blank">album</a></li>
+      <li class="menubar"><a href="GOODS.html" target="_blank">GOODS</a></li>
+      <li class="menubar"><a href="pick.html"  target="_blank">♥PICK♥</a></li>
+   </ul>
+</nav>
+
+<br>
+<table><td>
+<aside>
+<h4>category</h4>
+<ul>
+	<li><a href="스밍.html" target="iframec">Streaming List</a></li>
+	<li><a href="03.jpg" target="iframec">Official Color</a></li>
+	<li><a href="공식로고.jpg" target="iframec">Official Logo </a></li>
+	<li>Music Chart</li>
+		<ul>
+			<li><a href="https://www.melon.com/chart/index.htm" target="iframec">Melon</a></li>
+			<li><a href="http://www.mnet.com/chart/top100" target="iframec">Mnet</a></li>
+			<li><a href="https://music.naver.com/listen/top100.nhn?domain=TOTAL" target="iframec">NAVER MUSIC</a></li>
+			<li><a href="http://www.genie.co.kr/chart/top200" target="iframec">genie</a></li>
+			<li><a href="https://music.bugs.co.kr/chart?wl_ref=M_left_02_01" target="iframec">Bugs</a></li>
+		</ul>
+</ul>
+<iframe src="" name="iframec"></iframe>
+</aside></td>
+<td><img src="검정.jpg"></td>
+<td ><article>
+<div id="login" >
+<center>
+<form method="post" action=".jsp">
+<h4>LOGIN</h4>
+아이디&nbsp;&nbsp;&nbsp; &nbsp;   <input type="text" maxlength=10 value="7자 이내" name="id"/><br/>
+패스워드&nbsp;&nbsp;  <input type="password" name="pw" /><br/> 
+회원번호w-<input type="text"/><br/>
+공식 팬카페 별명<input type="text"/ size="14"><br/>
+<input type="submit" name="login" value="로그인">&nbsp;&nbsp;
+<input type="reset" value="초기화"></br>
+<a href="register2.html" target="_blank" id="register">회원가입</a>
+<a href="#" id="forgot">비밀번호 분실</a>
+</form>
+</center>
+</div>
+
+<center>
+<body onload="getDayD();">
+        <!--Selected Date:-->
+        <!--<input type="date" id="realtime">-->
+        <button onclick="checkDate()" id="realtime">♥</button>
+	
+</body>
+</center>
+
+
+<center>
+   <ul class="site">
+        <li><a href="http://cafe.daum.net/WannaOneOfficial" target="_blank"><img src="공식로고5.jpg" alt="공식 홈페이지" height="50"; width="50"; ></a></li>
+        <li><a href="https://www.instagram.com/wannaone.official/" target="_blank"><img src="인스타그램.png" alt="인스타그램" height="50"; width="50";></a></li>
+        <li><a href="https://channels.vlive.tv/DCD44B/home" target="_blank"><img src="브이.jpg" alt="브이앱" height="50"; width="50"; style="border-radius:10px;"></a></li>
+        <li><a href="https://www.facebook.com/WannaOne.official" target="_blank"><img src="페이.jpg" alt="페이스북" height="50"; width="50";  style="border-radius:10px;"></a></li>
+        <li><a href="https://twitter.com/WannaOne_twt " target="_blank"><img src="새.png" alt="트위터" height="50"; width="50";></li>
+    </ul>
+</center>
+</article></td>
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div id='clock' align=right></div>
+<script>
+    function setClock() {
+        var now = new Date();
+        var s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        document.getElementById('clock').innerHTML = s;
+        setTimeout('setClock()', 1000);
+    }
+    setClock();
+</script>
+
+<p align=right>
+<script>
+var today = new Date();
+document.write(today.toLocaleDateString() + "<br>");
+</script>
+</p>
+<footer id="f">Copyright (c) 20181046 Wannable </footer>
+</body>
+</html>
